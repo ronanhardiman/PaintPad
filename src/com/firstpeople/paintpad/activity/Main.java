@@ -53,16 +53,16 @@ import android.widget.RadioGroup;
 import static com.firstpeople.paintpad.utils.PaintConstants.*;
 
 /**
- * Main ActivityÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Activityï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½PaintViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½
+ * Main ActivityÊµÏÖÁËÖ÷³¡¾°µÄActivityÖ÷Òª¸ºÔðPaintViewÓë¸÷×é¼þµÄÐ­µ÷
  *
  * @author tf
- *this is the mainActivity
+ *
  */
 public class Main extends Activity implements OnClickListener {
 	// PaintView
 	private PaintView mPaintView = null;
 
-	// button ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ¸ï¿½ï¿½ï¿½ï¿½ï¿½Å¥
+	// button ½çÃæÉÏµÄ¸÷¸ö°´Å¥
 	private ImageButton saveButton = null;
 	private ImageButton loadButton = null;
 	private ImageButton clearButton = null;
@@ -75,22 +75,22 @@ public class Main extends Activity implements OnClickListener {
 	private ImageButton toColorLayoutButton = null;
 	private ImageButton toolButton = null;
 
-	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ÏµÄ°ï¿½Å¥
+	// µã»÷¹¤¾ß°´Å¥µ¯³ö¸¡¶¯²Ëµ¥ÉÏµÄ°´Å¥
 	private Button backGroundColorButton = null;
 	private Button plainPaintButton = null;
 	private Button blurPaintButton = null;
 	private Button embossButton = null;
 
-	// ï¿½ï¿½ï¿½Menuï¿½ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½Ü²Ëµï¿½
+	// µã»÷Menuµ¯³öµÄ¹¦ÄÜ²Ëµ¥
 	private ImageButton exitButton = null;
 	private ImageButton aboutButton = null;
 	private ImageButton helpButton = null;
 
-	// ï¿½ï¿½ï¿½ï¿½PopWindow
+	// Á½¸öPopWindow
 	private PopupWindow mPopupWindow = null;
 	private PopupWindow toolsPopupWindow = null;
 
-	// Ò»ï¿½ï¿½8ï¿½ï¿½ColorView
+	// Ò»¹²8¸öColorView
 	private ColorView colorView1 = null;
 	private ColorView colorView2 = null;
 	private ColorView colorView3 = null;
@@ -100,7 +100,7 @@ public class Main extends Activity implements OnClickListener {
 	private ColorView colorView7 = null;
 	private ColorView colorView8 = null;
 
-	// Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Layoutï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³Ð©ï¿½ä»¯
+	// Í¨¹ý¿ØÖÆLayoutÀ´¿ØÖÆÄ³Ð©±ä»¯
 	private LinearLayout colorLayout = null;
 	private LinearLayout buttonLayout = null;
 	private LinearLayout paintViewLayout = null;
@@ -109,7 +109,7 @@ public class Main extends Activity implements OnClickListener {
 	private LinearLayout shapLayout = null;
 	private LinearLayout shapLayoutf = null;
 
-	// Ò»Ð©RadioGroupï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½(Ò²ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ïµï¿½)RadioButton
+	// Ò»Ð©RadioGroupºÍÖØÒªµÄ(Ò²¾ÍÊÇÄ¬ÈÏµÄ)RadioButton
 	private RadioGroup colorRadioGroup = null;
 	private RadioGroup eraserSizeRadioGroup = null;
 	private RadioButton eraserSizeRadio01 = null;
@@ -119,13 +119,13 @@ public class Main extends Activity implements OnClickListener {
 	private RadioGroup shapRadioGroupf = null;
 	private RadioButton curvRadioButton = null;
 
-	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SizeRadioGroupï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
+	// ÓÃÓÚÁ½¸öSizeRadioGroupµÄÒ»Ð©²Ù×÷
 	private boolean clearCheckf = false;
 	private boolean clearCheck = false;
 
 	private List<ColorView> mColorViewList = null;
 
-	// Ê¹ï¿½ï¿½PenTypeï¿½ï¿½Ê±ï¿½æ´¢Ñ¡ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ù´ï¿½ï¿½ï¿½PaintView
+	// Ê¹ÓÃPenTypeÁÙÊ±´æ´¢Ñ¡ÔñµÄ±äÁ¿£¬µ±´´½¨Ê±ÔÙ´«¸øPaintView
 	private int mPenType = PEN_TYPE.PLAIN_PEN;
 
 	@Override
@@ -146,7 +146,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½RadioGroup
+	 * ³õÊ¼»¯ËùÓÐµÄRadioGroup
 	 */
 	private void initShapRadioGroups() {
 		shapRadioGroup = (RadioGroup) findViewById(R.id.shapRadioGroup);
@@ -163,7 +163,7 @@ public class Main extends Activity implements OnClickListener {
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 					@Override
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
-						// ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ã»ï¿½ï¿½Ñ¡ï¿½ï¿½
+						// Èç¹ûµ±Ç°Ã»ÓÐÑ¡ÖÐ
 						if (checkedId == -1) {
 							return;
 						}
@@ -198,7 +198,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ShapRadioGroup
+	 * ³õÊ¼»¯µÚÒ»¸öShapRadioGroup
 	 */
 	private void initShapRadioGroup() {
 		curvRadioButton.setChecked(true);
@@ -206,12 +206,12 @@ public class Main extends Activity implements OnClickListener {
 				.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 					@Override
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
-						// ï¿½ï¿½ï¿½ï¿½ï¿½Ç°Ã»ï¿½ï¿½Ñ¡ï¿½ï¿½
+						// Èç¹ûµ±Ç°Ã»ÓÐÑ¡ÖÐ
 						if (checkedId == -1) {
 							return;
 						}
 						/**
-						 * ï¿½ï¿½ï¿½ï¿½ÒªÃ¿ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½
+						 * ²»ÐèÒªÃ¿´Î¶¼µ÷ÓÃ
 						 */
 						if (clearCheckf == false) {
 							clearCheck = true;
@@ -243,7 +243,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½Pensizeï¿½ï¿½radioGroup
+	 * ³õÊ¼»¯¸ºÔðÈ·¶¨PensizeµÄradioGroup
 	 */
 	private void initPenSizeGroup() {
 		penSizeRadioGroup = (RadioGroup) findViewById(R.id.penRaidoGroup);
@@ -277,7 +277,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½EraserSizeÑ¡ï¿½ñ²¼¾ï¿½
+	 * ³õÊ¼»¯EraserSizeÑ¡Ôñ²¼¾Ö
 	 */
 	private void initEraseSizeGroup() {
 		eraserSizeRadioGroup = (RadioGroup) findViewById(R.id.eraseRaidoGroup);
@@ -311,18 +311,18 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½paintViewï¿½Ä»Øµï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ³õÊ¼»¯paintViewµÄ»Øµ÷º¯Êý
 	 */
 	private void initCallBack() {
 		mPaintView.setCallBack(new PaintViewCallBack() {
-			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Buttonï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½
+			// µ±»­ÁËÖ®ºó¶ÔButton½øÐÐ¸üÐÂ
 			@Override
 			public void onHasDraw() {
 				enableUndoButton();
 				disableRedoButton();
 			}
 
-			// ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½Ê§
+			// µ±µã»÷Ö®ºóÈÃ¸÷¸öµ¯³öµÄ´°¿Ú¶¼ÏûÊ§
 			@Override
 			public void onTouchDown() {
 				setAllLayoutInvisable();
@@ -331,7 +331,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½popUpWindow
+	 * ³õÊ¼»¯popUpWindow
 	 */
 	private void initPopUpWindow() {
 		initMenuPopup();
@@ -339,7 +339,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½Toolï¿½ï¿½PopupWidow
+	 * ³õÊ¼»¯ToolµÄPopupWidow
 	 */
 	private void initToolPopup() {
 		View toolsPopup = initToolPopWindowLayout();
@@ -347,7 +347,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ToolsPopupWindowï¿½Ä²ï¿½ï¿½ï¿½
+	 * ³õÊ¼»¯ToolsPopupWindowµÄ²¼¾Ö
 	 */
 	private View initToolPopWindowLayout() {
 		LayoutInflater mLayoutInflater = (LayoutInflater) this
@@ -360,7 +360,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ToolsPopupWindowsï¿½Ïµï¿½Buttons
+	 * ³õÊ¼»¯ToolsPopupWindowsÉÏµÄButtons
 	 */
 	private void initToolPopButtons(View toolsPopup) {
 		plainPaintButton = (Button) toolsPopup
@@ -379,7 +379,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½Menuï¿½ï¿½popupWindow
+	 * ³õÊ¼»¯MenuµÄpopupWindow
 	 */
 	private void initMenuPopup() {
 		View menuPopup = initPopLayout();
@@ -387,7 +387,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½MenuPopupWindowï¿½Ä²ï¿½ï¿½ï¿½
+	 * ³õÊ¼»¯MenuPopupWindowµÄ²¼¾Ö
 	 */
 	private View initPopLayout() {
 		LayoutInflater mLayoutInflater = (LayoutInflater) this
@@ -401,7 +401,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½MenuPopupWindowsï¿½Ïµï¿½Buttons
+	 * ³õÊ¼»¯MenuPopupWindowsÉÏµÄButtons
 	 */
 	private void initMenuPopButtons(View menuPopup) {
 		exitButton = (ImageButton) menuPopup.findViewById(R.id.exitButton);
@@ -421,7 +421,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½popupWindowï¿½ï¿½ï¿½Ãµï¿½ï¿½Ä°ï¿½Å¥ï¿½Ä¸ï¿½Ê½
+	 * ÉèÖÃpopupWindowËùÓÃµ½µÄ°´Å¥µÄ¸ñÊ½
 	 */
 	private void setToolButton(Button button) {
 		button.setOnClickListener(this);
@@ -429,7 +429,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½paintView
+	 * ³õÊ¼»¯»­»­ËùÓÃµÄpaintView
 	 */
 	private void initPaintView() {
 		mPaintView = new PaintView(this);
@@ -437,7 +437,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Layout
+	 * ³õÊ¼»¯ËùÓÃµ½µÄLayout
 	 */
 	private void initLayout() {
 		colorLayout = (LinearLayout) findViewById(R.id.LinearLayoutColor);
@@ -455,7 +455,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½É«Ñ¡ï¿½ï¿½ï¿½RadioGroup
+	 * ³õÊ¼»¯ÑÕÉ«Ñ¡ÔñµÄRadioGroup
 	 */
 	private void initColorRadioGroup() {
 		mColorViewList = new ArrayList<ColorView>();
@@ -490,7 +490,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ï¿½Eraserï¿½ï¿½Setï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½PenType
+	 * Èç¹ûÊÇEraserÔòSetµ½ÉÏÒ»¸öPenType
 	 */
 	private void setToLastPenTeype() {
 		if (mPaintView.getCurrentPainter() == PEN_TYPE.ERASER) {
@@ -499,13 +499,13 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½É«Ñ¡ï¿½ï¿½ï¿½View
+	 * ³õÊ¼»¯ÑÕÉ«Ñ¡ÔñµÄView
 	 */
 	private void initColorViews() {
-		// ï¿½ï¿½È¡preference
+		// ¶ÁÈ¡preference
 		SharedPreferences settings = getPreferences(Activity.MODE_PRIVATE);
 
-		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ä¬ï¿½ï¿½Öµ
+		// Èç¹ûÅäÖÃÎÄ¼þ²»´æÔÚ£¬ÔòÊ¹ÓÃÄ¬ÈÏÖµ
 		colorView1 = new ColorView(this, settings.getInt("color1", COLOR1));
 		colorView2 = new ColorView(this, settings.getInt("color2", COLOR2));
 		colorView3 = new ColorView(this, settings.getInt("color3", COLOR3));
@@ -518,7 +518,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Button
+	 * ³õÊ¼»¯ËùÓÐµÄButton
 	 */
 	private void initButtons() {
 		findButtonById();
@@ -531,7 +531,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ImageButtonï¿½ï¿½ï¿½ëµ½Listï¿½ï¿½
+	 * ½«ÐèÒª´¦ÀíµÄImageButton¼ÓÈëµ½ListÖÐ
 	 */
 	private List<ImageButton> initButtonList() {
 		List<ImageButton> list = new ArrayList<ImageButton>();
@@ -550,7 +550,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½Òµï¿½ï¿½ï¿½ï¿½Ðµï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½button
+	 * ÕÒµ½ËùÓÐµÄÍ¨¹ýËùÓÐµÄbutton
 	 */
 	private void findButtonById() {
 		saveButton = (ImageButton) findViewById(R.id.imageButtonSave);
@@ -570,7 +570,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Buttonï¿½ï¿½Drawable
+	 * ³õÊ¼»¯ËùÓÐButtonµÄDrawable
 	 */
 	private void setBackGroundDrawable() {
 		clearButton.setBackgroundDrawable(getResources().getDrawable(
@@ -598,7 +598,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * onClickï¿½ï¿½ï¿½ï¿½
+	 * onClickº¯Êý
 	 */
 	@Override
 	public void onClick(View v) {
@@ -681,7 +681,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½Úµï¿½Activity
+	 * ¹ØÓÚµÄActivity
 	 */
 	void onClickButtonHelp() {
 		Intent intent = new Intent(this, Help.class);
@@ -689,7 +689,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½Úµï¿½Activity
+	 * ¹ØÓÚµÄActivity
 	 */
 	private void onClickButtonAbout() {
 		Intent intent = new Intent(this, About.class);
@@ -697,7 +697,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * µã»÷¸¡¶¯²Åµ±ÉèÖÃ¹¤¾ßÀàÐÍ
 	 */
 	private void setToolTyle(int type) {
 		mPaintView.setCurrentPainterType(type);
@@ -706,21 +706,21 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½Ö®ï¿½ï¿½dissmiss
+	 * ¸¡µñÐ§¹û£¬ÔÚµã»÷Ö®ºódissmiss
 	 */
 	private void onClickButtonEmboss() {
 		setToolTyle(PEN_TYPE.EMBOSS);
 	}
 
 	/**
-	 * ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ÍË³ö³ÌÐò
 	 */
 	private void onClickButtonExit() {
 		this.finish();
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½Ç¦ï¿½Ê¹ï¿½ï¿½ï¿½
+	 * µã»÷Ç¦±Ê¹¦ÄÜ
 	 */
 	private void onClickButtonPlainPen() {
 		setToolTyle(PEN_TYPE.PLAIN_PEN);
@@ -734,7 +734,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
+	 * µã»÷¹¤¾ß£¬µ¯³ö¹¤¾ßÑ¡Ïî
 	 */
 	private void onClickButtonTools() {
 		setAllLayoutInvisable();
@@ -743,7 +743,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ColorViews
+	 * ±£´æColorViews
 	 */
 	@Override
 	protected void onPause() {
@@ -762,17 +762,17 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ï¿½menuï¿½ï¿½Ê±ï¿½ï¿½popupwindowÎ±×°ï¿½ï¿½menuï¿½ï¿½Ê¾
+	 * µ±µã»÷menuµÄÊ±ºò½«popupwindowÎ±×°³ÉmenuÏÔÊ¾
 	 */
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		// ï¿½ï¿½ï¿½menu
+		// µã»÷menu
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
 			setAllLayoutInvisable();
 			mPopupWindow.showAtLocation(findViewById(R.id.mainLayout),
 					Gravity.RIGHT | Gravity.BOTTOM, 0, 0);
 		}
-		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// µã»÷·µ»Ø
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			OkCancleDialog returnDialog = new OkCancleDialog(this,
 					new OnClickOkListener() {
@@ -782,17 +782,17 @@ public class Main extends Activity implements OnClickListener {
 						}
 					});
 			returnDialog.show();
-			returnDialog.setMessage("È·ï¿½ï¿½Òªï¿½Ë³ï¿½Ã´ï¿½ï¿½");
+			returnDialog.setMessage("È·¶¨ÒªÍË³öÃ´£¿");
 			return true;
 		}
 		return super.onKeyUp(keyCode, event);
 	}
 
 	/**
-	 * ï¿½Ä±ä±³ï¿½ï¿½ï¿½ï¿½É«
+	 * ¸Ä±ä±³¾°ÑÕÉ«
 	 */
 	private void onClickButtonBackGround() {
-		// ï¿½ï¿½Ê¼ï¿½ï¿½É«ÎªÔ­ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½É«
+		// ³õÊ¼ÑÕÉ«ÎªÔ­À´µÄ±³¾°ÑÕÉ«
 		new ColorPickerDialog(this, new OnColorChangedListener() {
 			@Override
 			public void colorChanged(int color) {
@@ -804,7 +804,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * È¥ButtonLayoutï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ£©
+	 * È¥ButtonLayout£¨Ö÷½çÃæ£©
 	 */
 	private void onClickButtonToButtonLayout() {
 		buttonLayout.setVisibility(View.VISIBLE);
@@ -812,7 +812,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * È¥ï¿½ï¿½É«Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * È¥ÑÕÉ«Ñ¡Ôñ½çÃæ
 	 */
 	private void onClickButtonToColorLayout() {
 		setAllLayoutInvisable();
@@ -840,7 +840,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½UndoRedo Button
+	 * ¸üÐÂUndoRedo Button
 	 */
 	private void upDateUndoRedo() {
 		if (mPaintView.canUndo()) {
@@ -866,7 +866,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * colorÑ¡ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Eraserï¿½ï¿½ï¿½ÎªÇ°Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * colorÑ¡Ôñ½çÃæ Èç¹ûÊÇEraserÔò¸ÄÎªÇ°Ò»¸ö»­±Ê
 	 */
 	private void onClickButtonColorSelect() {
 		new ColorPickerDialog(this, new OnColorChangedListener() {
@@ -886,7 +886,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½Ä±ä»­ï¿½ÊµÄ´ï¿½Ð¡
+	 * ¸Ä±ä»­±ÊµÄ´óÐ¡
 	 */
 	private void onCLickButtonPen() {
 		mPaintView.setCurrentPainterType(mPenType);
@@ -901,7 +901,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ²ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ½«ËùÓÐµÄ²¼¾ÖÈ«¶¼Òþ²Ø
 	 */
 	private void setAllLayoutInvisable() {
 		shapLayout.setVisibility(View.INVISIBLE);
@@ -911,7 +911,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Æ¤
+	 * ÏðÆ¤
 	 */
 	private void onClickButtonEraser() {
 		if (eraserSizeLayout.isShown()) {
@@ -926,7 +926,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½
+	 * Çå¿Õ
 	 */
 	private void onClickButtonClear() {
 		setAllLayoutInvisable();
@@ -934,7 +934,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Õ¶Ô»ï¿½ï¿½ï¿½
+	 * Çå¿Õ¶Ô»°¿ò
 	 */
 	private void clearDialog() {
 		OkCancleDialog dialog = new OkCancleDialog(this,
@@ -950,18 +950,18 @@ public class Main extends Activity implements OnClickListener {
 				});
 		dialog.show();
 		dialog.setCanceledOnTouchOutside(true);
-		dialog.setMessage("È·ï¿½ï¿½Òªï¿½ï¿½Õµï¿½Ç°Í¼ï¿½ï¿½Ã´ï¿½ï¿½\nï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä½ï¿½ï¿½ï¿½Ê§");
+		dialog.setMessage("È·¶¨ÒªÇå¿Õµ±Ç°Í¼»­Ã´£¿\nÄúÎ´±£´æµÄÐÞ¸Ä½«¶ªÊ§");
 	}
 
 	/**
-	 * ï¿½ï¿½ColorViewï¿½ï¿½Checkï¿½ï¿½ï¿½
+	 * ½«ColorViewµÄCheckÇå¿Õ
 	 */
 	private void upDateColorView() {
 		colorRadioGroup.clearCheck();
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½sizeView
+	 * ÖØÖÃsizeView
 	 */
 	private void resetSizeView() {
 		penSizeRadio1.setChecked(true);
@@ -970,17 +970,17 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
+	 * ÔØÈëÍ¼Æ¬
 	 */
 	private void onClickButtonLoad() {
 		setAllLayoutInvisable();
-		// ï¿½ï¿½ï¿½LoadÊ±Òªï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½
+		// µã»÷LoadÊ±Òª¶ÔÊý¾Ý¿â½øÐÐ¸üÐÂ
 		sendUpdateBroadCast();
 		startLoadActivity();
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½Í¹ã²¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sdï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½
+	 * ·¢ËÍ¹ã²¥£¬¸üÐÂsd¿¨ÖÐµÄÊý¾Ý¿â
 	 */
 	private void sendUpdateBroadCast() {
 		IntentFilter intentFilter = new IntentFilter(
@@ -994,7 +994,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½
+	 * ±£´æ
 	 */
 	private void onClickButtonSave() {
 		setAllLayoutInvisable();
@@ -1008,11 +1008,11 @@ public class Main extends Activity implements OnClickListener {
 				}
 			});
 			okDialog.show();
-			okDialog.setMessage("ï¿½ï¿½ï¿½ï¿½ï¿½æ´¢ï¿½ï¿½");
+			okDialog.setMessage("Çë²åÈë´æ´¢¿¨");
 		} else {
 			SaveDialog dialog = new SaveDialog(this,
 					new EditTextDialogListener() {
-						// ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ getDialogTextï¿½Ó¿ï¿½
+						// µ±µã»÷È·¶¨µÄÊ±ºò×Ô¶¯µ÷ÓÃ getDialogText½Ó¿Ú
 						@Override
 						public void getDialogText(String string) {
 							String sdDir = getDirPath();
@@ -1027,7 +1027,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½activiy, ï¿½ï¿½ï¿½ï¿½imageIntentï¿½ï¿½Ñ°ï¿½Òºï¿½ï¿½ÊµÄ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ¿ªÊ¼ÔØÈëactiviy, ·¢ËÍimageIntent£¬Ñ°ÕÒºÏÊÊµÄ³ÌÐòÔØÈë
 	 */
 	private void startLoadActivity() {
 		Intent intent = new Intent();
@@ -1037,7 +1037,7 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ãµï¿½Â·ï¿½ï¿½
+	 * ÔØÈëÖ®ºóµÃµ½Â·¾¶
 	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -1056,7 +1056,7 @@ public class Main extends Activity implements OnClickListener {
 							/ (float) mPaintView.getWidth());
 					int hRatio = (int) Math.ceil(op.outHeight
 							/ (float) mPaintView.getHeight());
-					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ó¦ï¿½Ä±ï¿½ï¿½ï¿½
+					// Èç¹û³¬³öÖ¸¶¨´óÐ¡£¬ÔòËõÐ¡ÏàÓ¦µÄ±ÈÀý
 					if (wRatio > 1 && hRatio > 1) {
 						if (wRatio > hRatio) {
 							op.inSampleSize = wRatio;
@@ -1088,14 +1088,14 @@ public class Main extends Activity implements OnClickListener {
 	}
 
 	/**
-	 * ï¿½Ãµï¿½ï¿½æ´¢Â·ï¿½ï¿½
+	 * µÃµ½´æ´¢Â·¾¶
 	 */
 	private String getDirPath() {
 		File sdcarddir = android.os.Environment.getExternalStorageDirectory();
 		String dirString = sdcarddir.getPath() + "/paintPad/";
 		File filePath = new File(dirString);
 		if (!filePath.exists()) {
-			// ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½
+			// Èç¹ûÎÞ·¨´´½¨
 			if (!filePath.mkdirs()) {
 				OkDialog dialog = new OkDialog(this, new OnClickOkListener() {
 					@Override
@@ -1104,7 +1104,7 @@ public class Main extends Activity implements OnClickListener {
 					}
 				});
 				dialog.show();
-				dialog.setMessage("ï¿½Þ·ï¿½ï¿½ï¿½sdï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ä¿Â¼/paintPad, \nï¿½ï¿½ï¿½ï¿½SDCard");
+				dialog.setMessage("ÎÞ·¨ÔÚsd¿¨ÖÐ´´½¨Ä¿Â¼/paintPad, \nÇë¼ì²éSDCard");
 			}
 		}
 		return dirString;
