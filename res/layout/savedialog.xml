@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:layout_gravity="center_horizontal">
+    
+    
+	<LinearLayout android:id="@+id/LinearLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center"><ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageViewSave"></ImageView><LinearLayout android:id="@+id/LinearLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_gravity="center"><TextView android:text="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/textViewSaveDialogText"></TextView>
+<EditText android:layout_height="wrap_content" android:text="@+id/editTextSaveName" android:id="@+id/editTextSaveImageName" android:layout_width="fill_parent"></EditText>
+</LinearLayout>
+</LinearLayout><LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center_horizontal">
+	
+<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageButtonSaveDialogOk"></ImageButton>
+<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageButtonSaveDialogCancel"></ImageButton>
+</LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

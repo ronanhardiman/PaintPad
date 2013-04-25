@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="CustomRadioButton1">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/size_radioxm_1</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="CustomRadioButton2">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/size_radioxm_2</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="CustomRadioButton3">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/size_radioxm_3</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="CustomRadioButton4">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/size_radioxm_4</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="CustomRadioButton5">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/size_radioxm_5</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectRect">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_rect</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectRectf">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_rectf</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectLine">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_line</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectCurv">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_curv</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectCircle">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_circle</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectCirclef">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_circlef</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectOval">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_oval</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectOvalf">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_ovalf</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectSquare">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_square</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="ShapSelectSquaref">
+		<item name="android:button">@null</item>
+		<item name="android:drawableLeft">@drawable/shap_select_squaref</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="bottom">
+	    <Button
+	    	android:id="@+id/buttonBlurPen"
+			android:layout_width="wrap_content"
+			android:layout_height="60dp"
+			android:text="模糊"
+			android:layout_weight="0.25"
+			android:background="@drawable/buttonselector">
+		</Button>
+		<Button
+	    	android:id="@+id/buttonEmboss"
+			android:layout_width="wrap_content"
+			android:layout_height="60dp"
+			android:text="浮雕"
+			android:layout_weight="0.25"
+			android:background="@drawable/buttonselector">
+		</Button>
+	    <Button
+	    	android:id="@+id/buttonPlainPen"
+			android:layout_width="wrap_content"
+			android:layout_height="60dp"
+			android:text="铅笔"
+			android:layout_weight="0.25"
+			android:background="@drawable/buttonselector">
+		</Button>
+	    <Button
+	    	android:id="@+id/buttonSelectBackGroundColor"
+			android:layout_width="wrap_content"
+			android:layout_height="60dp"
+			android:text="背景颜色"
+			android:layout_weight="0.25"
+			android:background="@drawable/buttonselector">
+		</Button>
+	</LinearLayout>
+</LinearLayout>
+

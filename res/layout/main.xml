@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:id="@+id/mainLayout">
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/buttonLayout"
+		android:layout_alignParentTop="true"><ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageButtonToColorLayout"></ImageButton>
+		<ImageButton android:id="@+id/imageButtonPen"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageButton>
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonTools"></ImageButton>
+		
+		<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageButtonEraser"></ImageButton><ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonUndo"></ImageButton>
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonRedo"></ImageButton>
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonClear"></ImageButton>
+		
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonLoadPicture"></ImageButton>
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonSave"></ImageButton>
+
+
+	</LinearLayout>
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/LinearLayoutColor"
+		android:visibility="invisible" android:layout_alignParentTop="true">
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonToButtonLayout"></ImageButton>
+		<RadioGroup android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/radioGroupColor"
+			android:orientation="horizontal" android:layout_marginTop="5px"></RadioGroup>
+		<ImageButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/imageButtonColorSelect"></ImageButton>
+	</LinearLayout>
+	<LinearLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/linearLayoutDown"
+		android:layout_below="@id/buttonLayout">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/paintViewLayout">
+		</LinearLayout>
+	</LinearLayout>
+
+
+	<LinearLayout android:id="@+id/sizeSelectLayout"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@drawable/background"
+		android:focusable="false" android:layout_below="@id/buttonLayout"
+		android:visibility="invisible" android:layout_centerInParent="true"
+		android:layout_marginTop="8dp">
+		<RadioGroup android:id="@+id/eraseRaidoGroup"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<RadioButton android:id="@+id/RadioButtonEraser01" style="@style/CustomRadioButton1"
+				android:checked="false" android:padding="30dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonEraser02" style="@style/CustomRadioButton2"
+				android:checked="false" android:padding="30dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonEraser03" style="@style/CustomRadioButton3"
+				android:checked="false" android:padding="30dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonEraser04" style="@style/CustomRadioButton4"
+				android:checked="false" android:padding="30dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonEraser05" style="@style/CustomRadioButton5"
+				android:checked="false" android:padding="30dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+		</RadioGroup>
+	</LinearLayout>
+
+	<LinearLayout android:id="@+id/sizeSelectLayoutPen"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:background="@drawable/background"
+		android:focusable="false" android:layout_below="@id/buttonLayout"
+		android:visibility="invisible" android:layout_centerInParent="true"
+		android:layout_marginTop="8dp">
+		<RadioGroup android:id="@+id/penRaidoGroup"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<RadioButton android:id="@+id/RadioButtonPen01" style="@style/CustomRadioButton1"
+				android:checked="false" android:padding="25dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonPen02" style="@style/CustomRadioButton2"
+				android:checked="false" android:padding="25dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonPen03" style="@style/CustomRadioButton3"
+				android:checked="false" android:padding="25dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonPen04" style="@style/CustomRadioButton4"
+				android:checked="false" android:padding="25dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonPen05" style="@style/CustomRadioButton5"
+				android:checked="false" android:padding="25dp"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:minHeight="20dp" android:minWidth="20dp"></RadioButton>
+		</RadioGroup>
+	</LinearLayout>
+
+	<LinearLayout android:id="@+id/shapSelectLayout1"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:focusable="false"
+		android:layout_below="@id/sizeSelectLayoutPen" android:visibility="invisible"
+		android:layout_centerInParent="true" android:background="@drawable/popbackground4"
+		android:layout_marginTop="8dp">
+		<RadioGroup android:id="@+id/shapRadioGroup"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<RadioButton android:id="@+id/RadioButtonShapCurv" style="@style/ShapSelectCurv"
+				android:checked="false" android:paddingTop="5dp"
+				android:paddingRight="5dp" android:paddingBottom="5dp"
+				android:paddingLeft="10dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapSquare"
+				style="@style/ShapSelectSquare" android:checked="false"
+				android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapRect" style="@style/ShapSelectRect"
+				android:checked="false" android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapCircle"
+				style="@style/ShapSelectCircle" android:checked="false"
+				android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapOval" style="@style/ShapSelectOval"
+				android:paddingTop="5dp" android:paddingRight="10dp"
+				android:paddingBottom="5dp" android:paddingLeft="5dp"
+				android:checked="false" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+		</RadioGroup>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/shapSelectLayout2"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:focusable="false"
+		android:layout_marginTop="0dp" android:visibility="invisible"
+		android:layout_centerInParent="true" android:layout_below="@id/shapSelectLayout1"
+		android:background="@drawable/popbackground4">
+		<RadioGroup android:id="@+id/shapRadioGroupf"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<RadioButton android:id="@+id/RadioButtonShapLine" style="@style/ShapSelectLine"
+				android:checked="false" android:paddingTop="5dp"
+				android:paddingRight="5dp" android:paddingBottom="5dp"
+				android:paddingLeft="10dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapSquaref"
+				style="@style/ShapSelectSquaref" android:checked="false"
+				android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapRectf"
+				style="@style/ShapSelectRectf" android:checked="false"
+				android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapCirclef"
+				style="@style/ShapSelectCirclef" android:checked="false"
+				android:padding="5dp" android:layout_height="wrap_content"
+				android:layout_width="wrap_content"></RadioButton>
+			<RadioButton android:id="@+id/RadioButtonShapOvalf"
+				style="@style/ShapSelectOvalf" android:checked="false"
+				android:layout_height="wrap_content" android:paddingTop="5dp"
+				android:paddingRight="10dp" android:paddingBottom="5dp"
+				android:paddingLeft="5dp" android:layout_width="wrap_content"></RadioButton>
+		</RadioGroup>
+	</LinearLayout>
+
+
+</RelativeLayout>
